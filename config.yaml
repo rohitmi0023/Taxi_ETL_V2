@@ -1,0 +1,15 @@
+project:
+  name: "Taxi ETL"
+  version: "2.0.0"
+  description: "ETL pipeline for NYC taxi data with dimensional modeling"
+
+# gcp configuration
+
+# data processing configuration
+
+# bigquery configuration
+
+# logging configuration
+
+# data validation rules
+
