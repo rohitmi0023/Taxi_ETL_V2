@@ -1,3 +1,6 @@
+"""
+Data reading utilities for Taxi ETL V2 project.
+"""
 import pandas as pd
 from pathlib import Path
 from typing import Optional

@@ -4,12 +4,47 @@ project:
   description: "ETL pipeline for NYC taxi data with dimensional modeling"
 
 # gcp configuration
+gcp:
+  project_id: "${GCP_PROJECT_ID}"
+  dataset_id: "${GCP_DATASET_ID}"
+  location: "US"
+  credentials_path: "${GCP_CREDENTIALS_PATH}"
 
 # data processing configuration
+data:
+  input_path: "datasets/taxi_data.csv"
+  sample_path: "datasets/taxi_data sample.csv"
+  batch_size: 10000
+  memory_optimization: true
 
 # bigquery configuration
+bigquery:
+  write_disposition: "replace"  # replace, append, fail
+  autodetect_schema: true
+  source_format: "PARQUET"
+  create_disposition: "CREATE_IF_NEEDED"
 
 # logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "app.log"
+  max_size: "10MB"
+  backup_count: 5
 
 # data validation rules
-
+validation:
+  min_passenger_count: 1
+  max_passenger_count: 6
+  min_trip_distance: 0.0
+  max_trip_distance: 100.0
+  min_fare_amount: 0.0
+  max_fare_amount: 1000.0
+  required_columns:
+    - "VendorID"
+    - "tpep_pickup_datetime"
+    - "tpep_dropoff_datetime"
+    - "passenger_count"
+    - "trip_distance"
+    - "fare_amount"
+    - "total_amount"

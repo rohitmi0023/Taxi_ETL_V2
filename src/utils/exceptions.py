@@ -25,3 +25,6 @@ class DimensionCreationError(TaxiETLException):
 
 class FactCreationError(TaxiETLException):
     pass
+
+class ConfigurationError(TaxiETLException):
+    pass

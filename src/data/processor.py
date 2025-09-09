@@ -1,3 +1,7 @@
+"""
+Data processing utilities for Taxi ETL Dashboarding project.
+Handles data transformations, type conversions, and memory optimization.
+"""
 import pandas as pd
 
 from ..utils.exceptions import MemoryOptimizationError
