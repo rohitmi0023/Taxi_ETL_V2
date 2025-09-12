@@ -29,7 +29,7 @@ class ETLOrchestrator:
         if not self.config.validate_required_config():
             raise ConfigurationError("Required Configuration is missing!")
         
-        log_config = self.config.validate_required_config()
+        log_config = self.config.get_logging_config()
         self.logger = LoggerFactory.create_logger(
             name=__name__,
             log_file=log_config.get('file'),
@@ -50,7 +50,7 @@ class ETLOrchestrator:
 
     def run_pipeline(self):
         self.logger.info('='*50)
-        self.logger.info('Starting the ETL process')
+        self.logger.info('Starting the Orchestrator process')
         self.logger.info('='*50)
 
         self.pipeline_state['start_time'] = time.time()

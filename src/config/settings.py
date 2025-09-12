@@ -42,6 +42,12 @@ class Config:
 
     def get_gcp_config(self):
         return self.configs.get('gcp')
+
+    def get_data_config(self):
+        return self.configs.get('data')
+    
+    def get_logging_config(self):
+        return self.configs.get('logging')
     
     def validate_required_config(self):
         if self.get_gcp_config():
